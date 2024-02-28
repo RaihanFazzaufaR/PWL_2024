@@ -25,7 +25,7 @@ use App\Http\Controllers\PhotoController;
 // });
 
 
-//basic routing praktikum
+// //basic routing praktikum
 // Route::get('/hello', function(){
 //     return 'Hello World';
 // });
@@ -44,7 +44,7 @@ use App\Http\Controllers\PhotoController;
 // });
 
 
-// Route Parameter Praktikum
+// //Route Parameter Praktikum
 // Route::get('/user/{name}', function ($name){
 //     return 'Nama saya ' .$name;
 // });
@@ -58,7 +58,7 @@ Route::get('/articles/{id}', function ($id){
 });
 
 
-//Optional Parameter Praktikum
+// //Optional Parameter Praktikum
 // Route::get('/user/{name?}', function($name=null){
 //     return 'Nama saya ' .$name;
 // });
@@ -68,14 +68,14 @@ Route::get('/articles/{id}', function ($id){
 // });
 
 
-//Route Name Praktikum
+// //Route Name Praktikum
 Route::get('/user/profile', function(){
     // 
 })->name('profile');
 
 
-// Route Group dan Route Prefixes Praktikum
-// Route Group
+// // Route Group dan Route Prefixes Praktikum
+// // Route Group
 // Route::middleware(['first', 'second'])->group(function(){
     
 // });
@@ -112,7 +112,7 @@ Route::get('/user/profile', function(){
 // Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 
-//Membuat Controller Praktikum
+// //Membuat Controller Praktikum
 // Route::get('/hello', [WelcomeController::class,'hello']);
 
 // Route::get('/', [PageController::class,'index']);
@@ -132,3 +132,14 @@ Route::resource('photos', PhotoController::class)->only([
 Route::resource('photos', PhotoController::class)->except([
     'create', 'store', 'update', 'destroy'
 ]);
+
+// //Membuat View Praktikum
+// Route::get('/greeting', function(){
+//     return view('hello', ['name' => 'Raihan']);
+// });
+
+// Route::get('/greeting', function(){
+//     return view('blog.hello', ['name' => 'Raihan']);
+// });
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
